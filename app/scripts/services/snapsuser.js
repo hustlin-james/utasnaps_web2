@@ -25,6 +25,26 @@ angular.module('a1App')
           }
         });
         return defer.promise;
+      },
+      changeUserProperties: function(propDict){
+        var defer = $q.defer();
+        var user = Parse.User.current();
+
+        for(var p in propDict){
+          user.set(p, propDict[p]);
+        }
+
+        user.save({
+          success: function(u){
+            console.log("updated user");
+            defer.resolve(u);
+          },
+          error: function(u,error){
+            console.log("error");
+            defer.reject(error);
+          }
+        });
+        return defer.promise;
       }
     };
     return snapsuser;

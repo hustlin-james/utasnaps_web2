@@ -20,6 +20,13 @@ angular.module('a1App')
 
    $scope.favoriteSnaps = [];
 
+   var currentUser = Parse.User.current();
+   $scope.username = currentUser.getUsername();
+
+   //Just a hash to check if the snap exists or not
+   //before pushing it into the temporary favorites array
+   var favoriteSnapsHash = {};
+
    $scope.onClickTab = function(identifier){
    	$scope.currentTab = $scope.tabs[identifier];
    	if(identifier== 'favorites'){
@@ -41,8 +48,10 @@ angular.module('a1App')
                 parseObject: object
               };
 
-              console.log(temp);
-              $scope.favoriteSnaps.push(temp);
+              if(!favoriteSnapsHash[temp.id]){
+                $scope.favoriteSnaps.push(temp);
+                favoriteSnapsHash[temp.id]=true;
+              }
 
             });
 
@@ -65,7 +74,7 @@ angular.module('a1App')
          outputAlert("Error logging you out.", "Error");
       }
 
-   }; 
+   };
 
    function outputAlert(msg,title){
       bootbox.dialog({

@@ -40,8 +40,8 @@
 /*
   profile.favorites.html css
 */
-
-td img{
-  height: 20%;
-  width: 20%;
+#favoritesThumbnail{
+  height: 50%;
+  width: 50%;
+  cursor: pointer;
 }
