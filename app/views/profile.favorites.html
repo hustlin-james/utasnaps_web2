@@ -1,0 +1,22 @@
+<h1>Favorite Snaps</h1>
+
+<!--
+<table class="table">
+	<tr ng-repeat="snap in favoriteSnaps track by $index">
+		<div class="row">
+			<div class="col-md-4">
+				{{snap.title}}
+			</div>
+		</div>
+	</tr>
+</table>
+-->
+
+<div class="row" ng-repeat="snap in favoriteSnaps track by $index">
+	<div class="col-md-4">
+		<img class="thumbnail" src="{{snap.imgSrc}}" ng-click="imgClicked(snap)"></img>
+	</div>
+	<div class="col-md-6">
+		{{snap.title}}
+	</div>
+</div>

@@ -1,0 +1,23 @@
+<h1>Profile</h1>
+<div class="row">
+	<div class="col-sm-3">
+		<div class="list-group">
+		  <a class="list-group-item active" ng-click="onClickTab('profile')">
+		    Profile
+		  </a>
+		  <a class="list-group-item" ng-click="onClickTab('favorites')">
+		  	Favorite Snaps
+		  </a>
+		  <a class="list-group-item" ng-click="logUserout()">
+		  	Logout
+		  </a>
+		</div>
+	</div>
+
+	<div class="col-sm-9">
+		<div id="mainTabView">
+			<div ng-include="currentTab"></div>
+		</div>
+	</div>
+
+</div>
