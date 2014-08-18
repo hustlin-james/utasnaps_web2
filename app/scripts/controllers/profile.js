@@ -9,8 +9,16 @@
  */
 angular.module('a1App')
   .controller('ProfileCtrl', function ($scope,$location,snapsuser) {
+
+   if(!$scope.setActiveProfileNav){
+    $scope.setActiveProfileNav = function(name){
+      $scope.activeProfileNav = name;
+    }
+   }
    
    $scope.setActivePage("profile");
+   $scope.setActiveProfileNav("profile_profile");
+
    $scope.tabs = {
    	'profile':'views/profile.profile.html',
    	'favorites':'views/profile.favorites.html'
@@ -30,13 +38,15 @@ angular.module('a1App')
    $scope.onClickTab = function(identifier){
    	$scope.currentTab = $scope.tabs[identifier];
    	if(identifier== 'favorites'){
+
+      $scope.setActiveProfileNav('profile_favorites');
+
    		console.log("favorites tab clicked");
          //$location.path('/login');
 
          /*retrieve the user's favorites*/
          snapsuser.getUserFavoriteSnaps().then(function(results){
             angular.forEach(results, function(object, index){
-               console.log(object.get("title"));
 
                var temp = {
                 id: object.id,
@@ -56,8 +66,10 @@ angular.module('a1App')
             });
 
          });
-
-   	}
+   	}else{
+      $scope.setActiveProfileNav('profile_profile');
+      console.log("profile tab clicked");
+    }
    };
 
    $scope.logUserout = function(){

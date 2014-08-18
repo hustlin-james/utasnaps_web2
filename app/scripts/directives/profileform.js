@@ -32,7 +32,6 @@ angular.module('a1App')
       		if(fieldset.attr('disabled')){
       			console.log('removing disabled');
       			fieldset.removeAttr('disabled');
-
       			scope.buttonText = "Save";
       		}else{
       			console.log('adding disabled');

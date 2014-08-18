@@ -24,10 +24,13 @@ angular.module('a1App')
    		//Call Parse login here
    		Parse.User.logIn($scope.username, $scope.password, {
    			success: function(user){
-   				//outputAlert("you have been logged in!", "Login Success");
+   				outputAlert("you have been logged in!", "Login Success");
                //Redirect the user to the home page
                console.log("redirecting the user");
-               $location.path('/');
+               $scope.$apply(function(){
+                  $location.path('/');
+               });
+              
    			},
    			error: function(user,error){
    			   outputAlert(error.message, "Error Loggin in");
@@ -52,6 +55,7 @@ angular.module('a1App')
                className: "btn-primary",
                callback: function(){
                   //TODO
+                  //$location.path('/');
                }
             }
          }
