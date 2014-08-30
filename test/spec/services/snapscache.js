@@ -11,8 +11,9 @@ describe('Service: snapsCache', function () {
     snapsCache = _snapsCache_;
   }));
 
+  /*
   it('should do something', function () {
     expect(!!snapsCache).toBe(true);
   });
-
+  */
 });

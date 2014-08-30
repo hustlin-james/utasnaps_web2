@@ -11,8 +11,10 @@ describe('Service: snapsuser', function () {
     snapsuser = _snapsuser_;
   }));
 
+  /*
   it('should do something', function () {
     expect(!!snapsuser).toBe(true);
   });
+  */
 
 });

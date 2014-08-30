@@ -7,6 +7,9 @@ utasnaps_web2
 1. "npm install"
 2. "bower install"
 
+## E2E Testing
+1. "grunt test"
+
 ## Notes:
 ### adding bower dependencies: 
 1. add the name and version to the bower.json

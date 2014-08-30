@@ -11,8 +11,9 @@ describe('Service: snaps', function () {
     snaps = _snaps_;
   }));
 
+  /*
   it('should do something', function () {
     expect(!!snaps).toBe(true);
   });
-
+  */
 });

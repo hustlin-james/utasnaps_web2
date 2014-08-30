@@ -16,7 +16,13 @@ describe('Controller: MainCtrl', function () {
     });
   }));
 
-  it('should attach a list of awesomeThings to the scope', function () {
-    expect(scope.awesomeThings.length).toBe(3);
+  it('should have the activePage set as main', function(){
+     expect(scope.activePage).toBe("main");
+  });
+   
+  describe('functions exist', function(){
+    it('shoud have nextPage', function(){
+      expect(scope.snaps.nextPage).toBeDefined();
+    })
   });
 });

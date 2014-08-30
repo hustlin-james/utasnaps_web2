@@ -26,6 +26,8 @@ module.exports = function(config) {
       'bower_components/angular-route/angular-route.js',
       'bower_components/angular-sanitize/angular-sanitize.js',
       'bower_components/angular-touch/angular-touch.js',
+      'bower_components/parse-js-sdk/lib/parse.js',
+      'bower_components/ngInfiniteScroll/build/ng-infinite-scroll.js',
       'app/scripts/**/*.js',
       'test/mock/**/*.js',
       'test/spec/**/*.js'
