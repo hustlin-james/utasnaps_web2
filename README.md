@@ -7,8 +7,13 @@ utasnaps_web2
 1. "npm install"
 2. "bower install"
 
-## E2E Testing
+## Unit Testing
 1. "grunt test"
+
+## E2E Testing
+1. "webdriver-manager start" / "sudo webdriver-manager start"
+2. open another cmd and go to the directory where protractor.conf.js is located
+3. "protractor protractor.conf.js"
 
 ## Notes:
 ### adding bower dependencies: 
